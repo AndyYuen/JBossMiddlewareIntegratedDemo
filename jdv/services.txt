@@ -1,0 +1,4 @@
+http://localhost:8080/MarketRESTWebSvc/MyRESTApplication/priceList
+
+http://localhost:8080/CustomerRESTWebSvc/MyRESTApplication/customerList
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <configuration>
+        <wildcard>false</wildcard>
+        <variables>
+            <variable name="Application">Application</variable>
+            <variable name="defaultStatelessKieSession">defaultStatelessKieSession</variable>
+        </variables>
+    </configuration>
+    <mapping>
+        <class-a>homeloancust.Application</class-a>
+        <class-b>brmsrequest.BatchExecution</class-b>
+        <field>
+            <a>address</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.address</b>
+        </field>
+        <field>
+            <a>amortization</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.amortization</b>
+        </field>
+        <field>
+            <a>annualIncome</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.annualIncome</b>
+        </field>
+        <field>
+            <a>downPayment</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.downPayment</b>
+        </field>
+        <field>
+            <a>name</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.name</b>
+        </field>
+        <field>
+            <a>salesPrice</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.salesPrice</b>
+        </field>
+        <field>
+            <a>socialSecurityNumber</a>
+            <b>insert.comRedhatBrmsMortgageappvalidationApplication.socialSecurityNumber</b>
+        </field>
+    </mapping>
+    <mapping>
+        <class-a>org.apache.camel.component.dozer.VariableMapper</class-a>
+        <class-b>brmsrequest.BatchExecution</class-b>
+        <field custom-converter-id="_variableMapping" custom-converter-param="${Application}">
+            <a>literal</a>
+            <b>insert.outIdentifier</b>
+        </field>
+        <field custom-converter-id="_variableMapping" custom-converter-param="${defaultStatelessKieSession}">
+            <a>literal</a>
+            <b>lookup</b>
+        </field>
+    </mapping>
+</mappings>

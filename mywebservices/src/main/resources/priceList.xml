@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pricelist>
+	<stock symbol="RHT" price="30.00" />
+
+	<stock symbol="BA" price="42.75" />
+	
+	<stock symbol="MON" price="78.75" />
+	
+	<stock symbol="PNRA" price="94.97"/>
+	
+	<stock symbol="SY" price="24.30" />
+	
+	<stock symbol="BTU" price="41.25" />
+	
+	<stock symbol="MRK" price="27.20" />
+	
+	<stock symbol="DIS" price="20.53" />
+	
+	<stock symbol="MCD" price="54.55" />
+	
+	<stock symbol="DOW" price="21.80" />
+	
+	<stock symbol="GM" price="3.15" />
+	
+	<stock symbol="SBGI" price="2.29" />
+	
+	<stock symbol="COLM" price="33.89" />
+	
+	<stock symbol="COLB" price="12.64" />
+	
+	<stock symbol="BSY" price="23.81" />
+	
+	<stock symbol="IBM" price="80.89" />
+	
+	<stock symbol="DELL" price="10.75" />
+	
+	<stock symbol="HPQ" price="31.52" />
+	
+	<stock symbol="GE" price="16.45" />
+	
+
+</pricelist>

@@ -1,0 +1,7 @@
+select product.symbol, stock.price, company_name from product, marketdatapriceView stock where product.symbol=stock.symbol
+
+http://localhost:8080/odata/stock_holdings/$metadata
+http://localhost:8080/odata/stock_holdings/CUSTOMER?$format=JSON
+http://localhost:8080/odata/stock_holdings/ACCOUNT?$format=JSON
+http://localhost:8080/odata/stock_holdings/HOLDINGS
+

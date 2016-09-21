@@ -1,0 +1,10 @@
+<Application infoType="validation">
+	<name>Ben</name>
+	<socialSecurityNumber>1234567890</socialSecurityNumber>
+	<annualIncome>150000</annualIncome>
+	<address>1 Miller Street</address>
+	<salesPrice>1000000</salesPrice>
+	<downPayment>400000</downPayment>
+	<amortization>17</amortization>
+</Application>
+

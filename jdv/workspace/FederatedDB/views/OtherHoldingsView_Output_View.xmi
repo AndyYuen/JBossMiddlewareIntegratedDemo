@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:transformation="http://www.metamatrix.com/metamodels/Transformation" xmlns:vxmldoc="http://www.metamatrix.com/metamodels/XmlDocument" xmlns:xsd="http://www.eclipse.org/xsd/2002/XSD">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:5d8bf09d-6710-4529-8d0c-f3d072637dd3" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument" modelType="VIRTUAL" ProducerName="Teiid Designer" ProducerVersion="9.0.3.Final-v20150810-1438-B1157">
+    <modelImports xmi:uuid="mmuuid:2b6ac6d7-e4db-44fe-8a89-5257399687e8" name="OtherHoldingsView_Output" modelLocation="OtherHoldingsView_Output.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:947d0014-6e96-45cc-a1cf-7de1ff3c91d3" name="XMLSchema" modelLocation="http://www.w3.org/2001/XMLSchema" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:d6837de4-9305-4b87-a810-cff03696cdee" name="OtherHoldingsView" modelLocation="OtherHoldingsView.xmi" uuid="mmuuid:015945ef-9dbf-415d-9085-f04b567ab2ae" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
+  </mmcore:ModelAnnotation>
+  <vxmldoc:XmlDocument xmi:uuid="mmuuid:dd61a969-d740-4736-a20f-e2c636d4813d" name="Holdings_OutputView">
+    <root xmi:uuid="mmuuid:a2da2362-b305-49b8-8f08-61382f35a8c7" name="Holdings_Output" namespace="mmuuid/80b4691e-8fef-4e7d-ac75-8f0493d59d85">
+      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output;XSDElementDeclaration"/>
+      <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:51a95b2b-bd13-488d-b51c-a69382014739">
+        <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:e46ae2db-6849-4fe6-961d-f6cd23c1e440" name="Holdings_Output_Instance" namespace="mmuuid/80b4691e-8fef-4e7d-ac75-8f0493d59d85">
+          <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Holdings_Output_Instance;XSDElementDeclaration"/>
+          <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:381308ba-152c-427b-a70b-07c2f498a317">
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:7059553b-60ac-4b82-9ce1-1f83cc0748fa" name="account_id">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output_Type;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/account_id;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:f50a1452-cc4a-415c-92d1-19122eb3edde" name="product_type">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output_Type;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/product_type;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:5c042708-4d31-42ae-b9de-760654795b61" name="value">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output_Type;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/value;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:45d3d560-f859-4181-98f6-40e27c6a2c43" name="id">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="OtherHoldingsView_Output.xsd#//Holdings_Output_Type;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/id;XSDElementDeclaration"/>
+            </entities>
+            <xsdComponent xsi:type="xsd:XSDModelGroup" href="OtherHoldingsView_Output.xsd#//Holdings_Output_Type;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup"/>
+          </entities>
+        </entities>
+        <xsdComponent xsi:type="xsd:XSDModelGroup" href="OtherHoldingsView_Output.xsd#//Holdings_Output;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup"/>
+      </entities>
+      <declaredNamespaces xmi:uuid="mmuuid:80b4691e-8fef-4e7d-ac75-8f0493d59d85" prefix="Holdings_Output" uri="http://www.metamatrix.com/Holdings_Output"/>
+      <declaredNamespaces xmi:uuid="mmuuid:c7ad0cc9-c861-479c-9ca6-4ad59980b0f0" prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+    </root>
+  </vxmldoc:XmlDocument>
+  <transformation:TransformationContainer xmi:uuid="mmuuid:4d48f5e4-00cc-40eb-87f5-d6df2cc8ac66">
+    <transformationMappings xsi:type="transformation:TreeMappingRoot" xmi:uuid="mmuuid:405a63d8-0628-40d2-9e92-0a98b410a6c2" inputs="mmuuid/f17fa6f8-cf81-4aba-aca6-656d8c1cb471" outputs="mmuuid/e46ae2db-6849-4fe6-961d-f6cd23c1e440" target="mmuuid/dd61a969-d740-4736-a20f-e2c636d4813d">
+      <nested xmi:uuid="mmuuid:8fbaae0e-dd71-4085-b7c8-0d1a5d35437b" inputs="mmuuid/b310081d-1936-4489-86d5-36c2c433ee28" outputs="mmuuid/7059553b-60ac-4b82-9ce1-1f83cc0748fa"/>
+      <nested xmi:uuid="mmuuid:2a31db5b-e918-4a6c-b4ab-99f65a56cbbb" inputs="mmuuid/3501b3ea-b8bf-4736-a073-bef78fd65e6e" outputs="mmuuid/f50a1452-cc4a-415c-92d1-19122eb3edde"/>
+      <nested xmi:uuid="mmuuid:8e406b06-f6b0-4d1e-812e-8ea80c811246" inputs="mmuuid/de35b3f7-8d1f-402e-988a-b2994be65468" outputs="mmuuid/5c042708-4d31-42ae-b9de-760654795b61"/>
+      <nested xmi:uuid="mmuuid:1f5768d2-e6fa-4bbe-9ec3-967a96b1a13a" inputs="mmuuid/cb27781c-1aad-44e0-b47e-12da462fcbbb" outputs="mmuuid/45d3d560-f859-4181-98f6-40e27c6a2c43"/>
+    </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:82cec192-e988-4824-aac4-5d50be7258ef" outputs="mmuuid/f17fa6f8-cf81-4aba-aca6-656d8c1cb471" target="mmuuid/f17fa6f8-cf81-4aba-aca6-656d8c1cb471">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:d7bb6986-3a9e-4875-8212-09af710f8842">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:3b9ce50d-b8a2-47af-aa57-6b844a52d286" selectSql="SELECT * FROM OtherHoldingsView.Holdings"/>
+        <aliases xmi:uuid="mmuuid:44134af1-8708-4eaa-9d8c-5a2abe2dfd82" alias="Holdings">
+          <aliasedObject href="OtherHoldingsView.xmi#mmuuid/44a98695-1d08-403e-8c3a-5e66b641be35"/>
+        </aliases>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:db4b0b32-990a-4905-8980-ad8c1a02675d" outputs="mmuuid/b310081d-1936-4489-86d5-36c2c433ee28">
+        <inputs href="OtherHoldingsView.xmi#mmuuid/ead36d4d-d23f-49af-8c6a-46be0966a1c4"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:d91293e7-066c-45a5-b9ff-af1dfe397098" outputs="mmuuid/3501b3ea-b8bf-4736-a073-bef78fd65e6e">
+        <inputs href="OtherHoldingsView.xmi#mmuuid/a8a6a4bc-8e52-4239-9b98-663be2db6fb2"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:d468c849-deb1-41e4-b73c-417cdd78fdee" outputs="mmuuid/de35b3f7-8d1f-402e-988a-b2994be65468">
+        <inputs href="OtherHoldingsView.xmi#mmuuid/8fdfbd06-0355-4a43-9358-17dd2585bff6"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:052ee85f-7270-4dbe-ab40-e0b8ffe62ac2" outputs="mmuuid/cb27781c-1aad-44e0-b47e-12da462fcbbb">
+        <inputs href="OtherHoldingsView.xmi#mmuuid/1ffd8f8d-3aa1-4478-ad8f-60e7539f7bc2"/>
+      </nested>
+      <inputs href="OtherHoldingsView.xmi#mmuuid/44a98695-1d08-403e-8c3a-5e66b641be35"/>
+    </transformationMappings>
+  </transformation:TransformationContainer>
+  <transformation:MappingClassSetContainer xmi:uuid="mmuuid:2e02c4f7-3070-481a-a557-b59b4a61729c">
+    <mappingClassSets xmi:uuid="mmuuid:361c9d5d-bf44-4ee0-b17f-42ccf274d462" target="mmuuid/dd61a969-d740-4736-a20f-e2c636d4813d">
+      <mappingClasses xmi:uuid="mmuuid:f17fa6f8-cf81-4aba-aca6-656d8c1cb471" name="Holdings_Output_Instance">
+        <columns xmi:uuid="mmuuid:b310081d-1936-4489-86d5-36c2c433ee28" name="account_id">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:3501b3ea-b8bf-4736-a073-bef78fd65e6e" name="product_type">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:de35b3f7-8d1f-402e-988a-b2994be65468" name="value">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:cb27781c-1aad-44e0-b47e-12da462fcbbb" name="id">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <inputSet xmi:uuid="mmuuid:2d51b441-83c3-46ba-88fa-0020f5623841"/>
+      </mappingClasses>
+    </mappingClassSets>
+  </transformation:MappingClassSetContainer>
+</xmi:XMI>

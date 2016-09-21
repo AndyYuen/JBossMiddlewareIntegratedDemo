@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:mmws="http://www.metamatrix.com/metamodels/WebService" xmlns:transformation="http://www.metamatrix.com/metamodels/Transformation">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:9b3a4b7e-b99c-4434-8417-d9200055a8ad" primaryMetamodelUri="http://www.metamatrix.com/metamodels/WebService" modelType="VIRTUAL" ProducerName="Teiid Designer" ProducerVersion="9.0.3.Final-v20150810-1438-B1157">
+    <modelImports xmi:uuid="mmuuid:94d0681e-5776-4fd0-b603-f179b8fe71e1" name="OtherHoldingsView_Output" modelLocation="OtherHoldingsView_Output.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:bdff8e20-3128-4b0e-92fb-705efb07ca48" name="OtherHoldingsView_Output_View" modelLocation="OtherHoldingsView_Output_View.xmi" uuid="mmuuid:5d8bf09d-6710-4529-8d0c-f3d072637dd3" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument"/>
+  </mmcore:ModelAnnotation>
+  <mmws:Interface xmi:uuid="mmuuid:5b51df67-a7fc-4708-b91b-2c6e9ab298be" name="OtherHoldingsView_Holdings">
+    <operations xmi:uuid="mmuuid:6ed9cf47-8ce0-4014-a562-a28a88ab3399" name="getHoldings">
+      <output xmi:uuid="mmuuid:11cd1464-dae8-4768-98db-440623dedb31" name="Holdings_OutputMsg">
+        <contentElement href="OtherHoldingsView_Output.xsd#//Holdings_Output;XSDElementDeclaration"/>
+        <samples xmi:uuid="mmuuid:df1970f8-bcdd-4b61-a70d-a684eeb13b18"/>
+        <xmlDocument href="OtherHoldingsView_Output_View.xmi#mmuuid/dd61a969-d740-4736-a20f-e2c636d4813d"/>
+      </output>
+    </operations>
+  </mmws:Interface>
+  <transformation:TransformationContainer xmi:uuid="mmuuid:85243a22-1b62-408e-af52-5421a891a0c8">
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:2dc958d4-0242-44b7-844b-5cb4a2eb72ae" outputs="mmuuid/6ed9cf47-8ce0-4014-a562-a28a88ab3399" target="mmuuid/6ed9cf47-8ce0-4014-a562-a28a88ab3399">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:787f1317-42e5-4811-94dd-0f6e6615e8dc">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:76aeba00-c6ce-4bba-94e0-072af864e8cc" selectSql="BEGIN&#xa;SELECT * FROM OtherHoldingsView_Output_View.Holdings_OutputView;&#xa;END"/>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:0a996acb-d097-43f1-9090-db1a7606e37e" outputs="mmuuid/df1970f8-bcdd-4b61-a70d-a684eeb13b18"/>
+    </transformationMappings>
+  </transformation:TransformationContainer>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:4eef5ecf-993d-45df-88e6-935ac4b188a5">
+    <diagram xmi:uuid="mmuuid:ba6a2c0f-b955-401e-b350-765bd0d0c7b0" type="packageDiagramType" target="mmuuid/9b3a4b7e-b99c-4434-8417-d9200055a8ad">
+      <diagramEntity xmi:uuid="mmuuid:ee1d8c02-9fc5-471f-b9c2-7c33368058ed" modelObject="mmuuid/5b51df67-a7fc-4708-b91b-2c6e9ab298be" xPosition="10" yPosition="10"/>
+    </diagram>
+  </diagram:DiagramContainer>
+</xmi:XMI>

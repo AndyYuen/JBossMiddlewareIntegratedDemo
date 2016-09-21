@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+       xmlns:camel="http://camel.apache.org/schema/blueprint"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+  <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+      <property name="brokerURL" value="vm://localhost"/>
+  </bean>
+  <bean id="RemoteBrmsValidation" class="com.redhat.cbrouting.RemoteBrmsValidation" />
+  <bean id="startProcessBean" class="com.redhat.cbrouting.RemoteBpmsStartProcess" />
+  
+  <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/blueprint">
+  <endpoint uri="dozer:LoanApp2DecisionServer?sourceModel=homeloancust.Application&amp;targetModel=brmsrequest.BatchExecution&amp;marshalId=brmsrequest&amp;unmarshalId=homeloancust&amp;mappingFile=transformation2DecisionServer.xml" id="LoanApp2DecisionServer"/>
+  <dataFormats>
+    <jaxb contextPath="homeloancust" id="homeloancust"/>
+    <jaxb contextPath="brmsrequest" id="brmsrequest"/>
+  </dataFormats>
+  <route id="main">
+    <from uri="file:src/data?noop=true"/>
+    <choice>
+      <when id="Other Holdings">
+        <xpath>/holdings[@infoType='otherHoldings']</xpath>
+        <log message="Other Holdings Route******Got holdings file: ${file:name};\n${body}" id="Holdings Log"/>
+        <to uri="file:target/jdv"/>
+      </when>
+      <when id="Customer Validation">
+        <xpath>/Application[@infoType='validation']</xpath>
+        <log message="Customer Validation Route******Got customer file: ${file:name};\n${body}" id="Customer Validation Log"/>
+        <to pattern="InOnly" uri="activemq:queue:validation" id="validationQueue"/>
+      </when>
+      <when id="Home Loan">
+        <xpath>/Application[@infoType='homeLoan']</xpath>
+        <log message="Home Loan Route******Got mortgage application file: ${file:name};\n${body}" id="Mortgage Log"/>
+        <wireTap uri="smtps://smtp.gmail.com:465?useInlineAttachments=true&amp;runLoggingLevel=INFO&amp;exchangePattern=InOptionalOut&amp;password=Kardinia7015g&amp;subject=RE: Mortgage Application Recevied&amp;from=andyyuen105@gmail.com&amp;username=andyyuen105@gmail.com" copy="true" id="WireTap to email">
+          <body>
+            <xpath>/*</xpath>
+          </body>
+        </wireTap>
+        <to pattern="InOnly" uri="activemq:queue:mortgage" id="mortgageQueue"/>
+      </when>
+      <otherwise>
+        <log message="Otherwise/Error Route******File content not recognised: ${file:name};\n${body}" id="Error Log"/>
+        <to pattern="InOnly" uri="activemq:queue:error" id="ErrorQueue"/>
+      </otherwise>
+    </choice>
+  </route>
+  <route id="bpms">
+    <from uri="activemq:queue:mortgage"/>
+    <bean ref="startProcessBean" method="transformAndStartProces" id="startProcessBean"/>
+    <log message="Home Loan Route*************result: ${body}" logName="bpmsResultLog"/>
+  </route>
+  <route id="bre">
+    <from uri="activemq:queue:validation"/>
+    <log message="Customer Validation Route******Got from queue - ${body}" id="BREvalidationQueueLog"/>
+    <to ref="LoanApp2DecisionServer" id="validationDataMapper"/>
+    <log message="Customer Validation Route******transformed to:\n${body}" loggingLevel="INFO" id="BREvalidationTransformerLog"/>
+    <bean ref="RemoteBrmsValidation" method="validate" id="BRERemoteValidation"/>
+    <choice>
+      <when id="BREValidationError">
+        <xpath>boolean(//cause/text()[1])</xpath>
+        <log message="Customer Validation******Validation Error" id="BRELogValidationError"/>
+      </when>
+      <otherwise>
+        <log message="Customer Validation******ValidationOK ${body}" id="BRELogValidationOK"/>
+      </otherwise>
+    </choice>
+  </route>
+  <route id="error">
+    <from uri="activemq:queue:error" id="Error Queue">
+      <description/>
+    </from>
+    <log message="Otherwise/Error Route******Retrieved Error XML and terminate - ${body}" id="Terminate Error"/>
+  </route>
+</camelContext>
+
+</blueprint>

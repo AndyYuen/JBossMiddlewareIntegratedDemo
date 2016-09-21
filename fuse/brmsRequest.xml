@@ -1,0 +1,18 @@
+<batch-execution lookup="defaultStatelessKieSession">
+   <insert out-identifier="Application">
+        <com.redhat.brms.mortgageappvalidation.Application>
+	<name>Ben</name>
+	<socialSecurityNumber>123456789</socialSecurityNumber>
+	<annualIncome>150000</annualIncome>
+	<address>1 Miller Street</address>
+	<salesPrice>1000000</salesPrice>
+	<downPayment>400000</downPayment>
+	<amortization>15</amortization>
+         </com.redhat.brms.mortgageappvalidation.Application>
+   </insert>
+
+
+
+
+   <fire-all-rules />
+</batch-execution>

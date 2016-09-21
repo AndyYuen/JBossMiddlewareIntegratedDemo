@@ -1,0 +1,10 @@
+<Application infoType="homeLoan">
+	<name>John</name>
+	<socialSecurityNumber>123456780</socialSecurityNumber>
+	<annualIncome>150000</annualIncome>
+	<address>1 Miller Street</address>
+	<salesPrice>1000000</salesPrice>
+	<downPayment>400000</downPayment>
+	<amortization>15</amortization>
+</Application>
+

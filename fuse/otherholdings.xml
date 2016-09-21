@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<holdings infoType="otherHoldings">
+	<holding id="1" account_id="19980002" product_type="Car" value="21000.00" />
+	<holding id="2" account_id="19980002" product_type="Car" value="21000.00" />
+	<holding id="3" account_id="19980002" product_type="Mortgage" value="225000.00" />
+	<holding id="4" account_id="19980003" product_type="Mortgage" value="410000.00" />
+	<holding id="5" account_id="19990007" product_type="Mortgage" value="1275200.00" />
+	<holding id="6" account_id="19990007" product_type="Car" value="41000.00" />
+	<holding id="7" account_id="19990007" product_type="Car" value="85000.00" />
+	<holding id="8" account_id="20000015" product_type="Mortgage" value="300000.00" />
+	<holding id="9" account_id="20000019" product_type="Car" value="35000.00" />
+</holdings>

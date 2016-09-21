@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<!--
+<server>
+ <id>local-sramp-repo</id>
+ <username>erics</username>
+ <password>jbossfsw1!</password>
+</server>
+-->
+  <profiles>
+
+    <!-- Configure the JBoss EAP Maven repository -->
+    <profile>
+      <id>jboss-eap-repository</id>
+      <repositories>
+        <repository>
+          <id>jboss-eap-repository</id>
+          <url>file:///home/ayuen/jboss-brms-bpmsuite-6.1.0.GA-redhat-2-maven-repository/maven-repository</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>jboss-eap-plugin-repository</id>
+          <url>file:///home/ayuen/jboss-brms-bpmsuite-6.1.0.GA-redhat-2-maven-repository/maven-repository</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    
+     <!-- Configure the JBoss DG Maven repository -->
+    <profile>
+         <id>jboss-datagrid-repository</id>
+         <repositories>
+            <repository>
+               <id>jboss-datagrid-repository</id>
+               <name>JBoss Data Grid Maven Repository</name>
+               <url>file:///home/ayuen/enablement_workspace/JDG/jdg-labs/target/local_mvn_repos/jboss-datagrid-6.3.0-maven-repository</url>
+               <layout>default</layout>
+               <releases>
+                  <enabled>true</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </releases>
+               <snapshots>
+                  <enabled>false</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </snapshots>
+            </repository>
+            <repository>
+               <id>techpreview-all-repository</id>
+               <name>Red Hat Enterprise Maven Repository</name>
+               <url>http://maven.repository.redhat.com/techpreview/all/</url>
+               <layout>default</layout>
+               <releases>
+                  <enabled>true</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </releases>
+               <snapshots>
+                  <enabled>false</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </snapshots>
+            </repository>
+         </repositories>
+         <pluginRepositories>
+            <pluginRepository>
+               <id>jboss-datagrid-repository</id>
+               <name>JBoss Data Grid Maven Repository</name>
+               <url>file:///home/ayuen/enablement_workspace/JDG/jdg-labs/target/local_mvn_repos/jboss-datagrid-6.3.0-maven-repository</url>
+               <layout>default</layout>
+               <releases>
+                  <enabled>true</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </releases>
+               <snapshots>
+                  <enabled>false</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </snapshots>
+            </pluginRepository>
+            <pluginRepository>
+               <id>techpreview-all-repository</id>
+               <name>Red Hat Enterprise Maven Repository</name>
+               <url>http://maven.repository.redhat.com/techpreview/all/</url>
+               <layout>default</layout>
+               <releases>
+                  <enabled>true</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </releases>
+               <snapshots>
+                  <enabled>false</enabled>
+                  <updatePolicy>never</updatePolicy>
+               </snapshots>
+            </pluginRepository>
+         </pluginRepositories>
+      </profile>
+
+     <!-- Configure the JBoss Fuse Maven repository -->
+    <profile>
+         <id>jboss-fuse-repository</id>
+  <repositories>
+
+    <repository>
+      <id>fusesource.ea.repo</id>
+      <name>JBoss Fuse Early Access Repository</name>
+      <url>https://repo.fusesource.com/nexus/content/groups/ea</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>fusesource.release.repo</id>
+      <name>JBoss Fuse Release Repository</name>
+      <url>https://repo.fusesource.com/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>jboss.public.repo</id>
+      <name>JBoss Public Repository</name>
+      <url>http://repository.jboss.org/nexus/content/repositories/public</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>fusesource.ea.repo</id>
+      <name>JBoss Fuse Early Access Repository</name>
+      <url>https://repo.fusesource.com/nexus/content/groups/ea</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>fusesource.release.repo</id>
+      <name>JBoss Fuse Release Repository</name>
+      <url>https://repo.fusesource.com/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>jboss.public.repo</id>
+      <name>JBoss Public Repository</name>
+      <url>http://repository.jboss.org/nexus/content/repositories/public</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+
+  </pluginRepositories>
+      </profile>
+
+	<!-- JDV 6.2 -->
+	<profile>
+	<id>dv-local-repos</id>
+	<repositories>
+		<repository>
+			<id>dv-6.1.0.GA-redhat-2-repository</id>
+			<name>DV 6.1.0 GA Repository</name>
+			<url>file:///home/ayuen/jboss-dv-6.2.0-maven-repository/maven-repository</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>dv-6.1.0.GA-redhat-2-repository</id>
+			<name>DV 6.1.0 GA Repository</name>
+			<url>file:///home/ayuen/jboss-dv-6.2.0-maven-repository/maven-repository</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</profile>
+
+<!-- BPMS 6.3 -->
+      <!-- JBoss Techpreview -->
+      <profile>
+          <id>redhat-techpreview-all-repository</id>
+          <repositories>
+              <repository>
+                  <id>redhat-techpreview-all-repository</id>
+                  <name>Red Hat Tech Preview repository (all)</name>
+                  <url>file:///media/sf_andyyuen/Downloads/middleware/jboss-brms-bpmsuite-6.3.0.GA-maven-repository/maven-repository</url>
+                  <layout>default</layout>
+                  <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>daily</updatePolicy>
+                  </releases>
+                  <snapshots>
+                      <enabled>false</enabled>
+                      <updatePolicy>daily</updatePolicy>
+                  </snapshots>
+              </repository>
+          </repositories>
+          <pluginRepositories>
+              <pluginRepository>
+                  <id>redhat-techpreview-all-repository</id>
+                  <name>Red Hat Tech Preview repository (all)</name>
+                  <url>file:///media/sf_andyyuen/Downloads/middleware/jboss-brms-bpmsuite-6.3.0.GA-maven-repository/maven-repository</url>
+                  <layout>default</layout>
+                  <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>daily</updatePolicy>
+                  </releases>
+                  <snapshots>
+                      <enabled>false</enabled>
+                      <updatePolicy>daily</updatePolicy>
+                  </snapshots>
+              </pluginRepository>
+          </pluginRepositories>
+      </profile>
+
+  </profiles>
+
+  <activeProfiles>
+    <!-- Optionally, make the repositories active by default -->
+    	<activeProfile>jboss-eap-repository</activeProfile>
+	<activeProfile>jboss-fuse-repository</activeProfile>
+	<activeProfile>redhat-techpreview-all-repository</activeProfile>
+
+
+	
+<!--
+	<activeProfile>jboss-datagrid-repository</activeProfile>
+	
+	<activeProfile>dv-local-repos</activeProfile>
+-->
+  </activeProfiles>
+
+</settings>
