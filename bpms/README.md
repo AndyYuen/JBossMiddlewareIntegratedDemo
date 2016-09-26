@@ -36,3 +36,5 @@ More preparation work assuming you are familiar of BPMS Business Central:
 7) If you set up BPMS using the default H2 im-memory database, remember to
    build and deploy the Mortgage business process and start the Validation container
    everythime you restart BPMS.
+8) Add roles: admin,analyst,reviewer,developer,appraiser,broker,manager,kie-server to your BPMS User
+   otherwise the business process and Realtime Decision Server willl not work correctly.
